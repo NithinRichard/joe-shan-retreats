@@ -71,7 +71,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden rounded-full border border-ink/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory md:inline-flex"
+            className="hidden rounded-full border border-ink/30 bg-ivory/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory md:inline-flex"
           >
             Book / Enquire
           </Link>

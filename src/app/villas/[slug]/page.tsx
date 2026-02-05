@@ -89,13 +89,13 @@ export default async function VillaDetailPage({
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic"
+                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic hover:text-ivory"
               >
                 Enquire now
               </Link>
               <a
                 href={villa.googleMapLink}
-                className="rounded-full border border-ink/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink"
+                className="rounded-full border border-ink/30 bg-ivory/90 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -259,13 +259,13 @@ export default async function VillaDetailPage({
                 <div className="mt-6 grid gap-3">
                   <Link
                     href="/contact"
-                    className="rounded-full bg-ink px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic"
+                    className="rounded-full bg-ink px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic hover:text-ivory"
                   >
                     Enquire now
                   </Link>
                   <a
                     href={villa.googleMapLink}
-                    className="rounded-full border border-ink/20 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink"
+                    className="rounded-full border border-ink/30 bg-ivory/90 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -305,13 +305,13 @@ export default async function VillaDetailPage({
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic"
+                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic hover:text-ivory"
               >
                 Request availability
               </Link>
               <Link
                 href="/villas"
-                className="rounded-full border border-ink/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink"
+                className="rounded-full border border-ink/30 bg-ivory/90 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory"
               >
                 Back to villas
               </Link>

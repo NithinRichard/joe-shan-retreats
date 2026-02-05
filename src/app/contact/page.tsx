@@ -84,7 +84,7 @@ export default function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic"
+                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic hover:text-ivory"
               >
                 Submit enquiry
               </button>
@@ -104,13 +104,13 @@ export default function ContactPage() {
               <div className="mt-4 flex flex-wrap gap-3">
                 <Link
                   href="https://wa.me/919876543210"
-                  className="rounded-full border border-ink/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink"
+                  className="rounded-full border border-ink/30 bg-ivory/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:bg-ink hover:text-ivory"
                 >
                   WhatsApp
                 </Link>
                 <Link
                   href="mailto:hello@joeshanretreats.com"
-                  className="rounded-full border border-ink/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink"
+                  className="rounded-full border border-ink/30 bg-ivory/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:bg-ink hover:text-ivory"
                 >
                   Email
                 </Link>

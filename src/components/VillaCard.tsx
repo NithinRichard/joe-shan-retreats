@@ -27,7 +27,17 @@ export function VillaCard({ villa }: { villa: Villa }) {
           <p className="mt-2 text-sm text-ink/70">{villa.location}</p>
         </div>
         <p className="text-sm leading-6 text-ink/70">{villa.shortDescription}</p>
-        <div className="mt-2 grid gap-2 text-[11px] text-ink/60 sm:text-xs">
+        <div className="mt-2 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.2em] text-ink/50">
+          {villa.tags?.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-ink/10 px-3 py-1"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="mt-3 grid gap-2 text-[11px] text-ink/60 sm:text-xs">
           <div className="flex items-center gap-2">
             <BedDouble className="h-4 w-4 text-tropic/70" />
             <span>{villa.capacity}</span>

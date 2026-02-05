@@ -7,6 +7,7 @@ import { VillaCard } from "@/components/VillaCard";
 import { StructuredData } from "@/components/StructuredData";
 import { HeroParallax } from "@/components/HeroParallax";
 import { StorylineSection } from "@/components/StorylineSection";
+import { HeroWordSwap } from "@/components/HeroWordSwap";
 
 export default function Home() {
   const heroVilla = featuredVillas[0];
@@ -35,23 +36,27 @@ export default function Home() {
             </p>
             <div className="mt-4 h-[1px] w-16 bg-ink/20" />
             <h1 className="text-display mt-6 text-4xl leading-tight text-ink sm:text-5xl md:text-6xl">
-              Discover coastal villas designed for calm, crafted for luxury.
+              Discover coastal villas designed for{" "}
+              <span className="text-tropic">
+                <HeroWordSwap />
+              </span>
+              , crafted for luxury.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">
-              Joe Shan Retreats curates boutique villas along Kerala most
-              tranquil shores. Immerse in sea-view mornings, tropical gardens,
-              and restorative slow travel.
+              Joe Shan Retreats curates boutique villas along Kerala calmest
+              shores. Immerse in sea-view mornings, tropical gardens, and a
+              slower coastal rhythm shaped by nature and quiet hospitality.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/villas"
-                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic"
+                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic hover:text-ivory"
               >
                 Explore Villas
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-ink/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink"
+                className="rounded-full border border-ink/30 bg-ivory/90 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory"
               >
                 Enquire
               </Link>
@@ -66,8 +71,8 @@ export default function Home() {
                 <p>Curated retreats</p>
               </div>
               <div>
-                <p className="text-display text-2xl text-ink">Kerala</p>
-                <p>Ocean-side</p>
+                <p className="text-display text-2xl text-ink">100m</p>
+                <p>Beach walks</p>
               </div>
             </div>
           </Reveal>
@@ -99,6 +104,42 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-tropic">
+              Signature promises
+            </p>
+            <h2 className="text-display mt-4 text-3xl md:text-4xl">
+              Quiet luxury, crafted with coastal care.
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Private by design",
+                text: "Low-density villas with attentive hosts and calm, personal service.",
+              },
+              {
+                title: "Kerala-first experiences",
+                text: "Local cuisine, coastal rituals, and stories rooted in place.",
+              },
+              {
+                title: "Effortless stays",
+                text: "Thoughtful details, seamless check-ins, and flexible arrangements.",
+              },
+            ].map((item) => (
+              <Reveal key={item.title}>
+                <div className="h-full rounded-[28px] border border-black/5 bg-white/80 p-6">
+                  <p className="text-display text-2xl text-ink">{item.title}</p>
+                  <p className="mt-3 text-sm leading-6 text-ink/70">{item.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -292,6 +333,39 @@ export default function Home() {
       </section>
 
       <section className="section-pad">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <Reveal>
+            <div className="rounded-[32px] border border-black/5 bg-mist px-8 py-10 text-center shadow-[0_30px_80px_rgba(12,27,28,0.08)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-tropic">
+                Concierge
+              </p>
+              <h2 className="text-display mt-4 text-3xl md:text-4xl">
+                Tell us your dates. We will curate the perfect villa.
+              </h2>
+              <p className="mt-4 text-base text-ink/70 sm:text-lg">
+                Share your travel window and preferences. Our team will respond
+                with the ideal stay and local experiences.
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic hover:text-ivory"
+                >
+                  Start an enquiry
+                </Link>
+              <Link
+                href="/villas"
+                className="rounded-full border border-ink/30 bg-ivory/90 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory"
+              >
+                View villas
+              </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-pad">
         <div className="mx-auto w-full max-w-5xl px-6 text-center">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-tropic">
@@ -307,13 +381,13 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic"
+                className="rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ivory transition hover:bg-tropic hover:text-ivory"
               >
                 Start an enquiry
               </Link>
               <Link
                 href="/villas"
-                className="rounded-full border border-ink/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink"
+                className="rounded-full border border-ink/30 bg-ivory/90 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-ink hover:bg-ink hover:text-ivory"
               >
                 Browse villas
               </Link>
