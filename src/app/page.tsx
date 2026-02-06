@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { SiteShell } from "@/components/SiteShell";
 import { featuredVillas } from "@/data/villas";
-import { VillaCard } from "@/components/VillaCard";
+import { VillaRow } from "@/components/VillaRow";
 import { StructuredData } from "@/components/StructuredData";
 import { HeroParallax } from "@/components/HeroParallax";
 import { StorylineSection } from "@/components/StorylineSection";
@@ -29,23 +29,23 @@ export default function Home() {
     <SiteShell>
       <StructuredData data={schema} />
       <section className="hero-gradient">
-        <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 pb-20 pt-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 pb-24 pt-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-tropic">
-              Kerala retreat lifestyle
+            <p className="text-xs font-semibold uppercase tracking-[0.5em] text-tropic">
+              A coastal world of calm
             </p>
-            <div className="mt-4 h-[1px] w-16 bg-ink/20" />
-            <h1 className="text-display mt-6 text-4xl leading-tight text-ink sm:text-5xl md:text-6xl">
-              Discover coastal villas designed for{" "}
+            <div className="mt-5 h-[1px] w-24 bg-ink/20" />
+            <h1 className="text-display mt-6 text-5xl leading-[1.02] text-ink sm:text-6xl md:text-7xl lg:text-8xl">
+              A retreat where{" "}
               <span className="text-tropic">
                 <HeroWordSwap />
-              </span>
-              , crafted for luxury.
+              </span>{" "}
+              feels effortless.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">
-              Joe Shan Retreats curates boutique villas along Kerala calmest
-              shores. Immerse in sea-view mornings, tropical gardens, and a
-              slower coastal rhythm shaped by nature and quiet hospitality.
+            <p className="mt-8 max-w-xl text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">
+              Joe Shan Retreats curates a collection of beachfront villas in
+              Kerala. Expect sea-view mornings, slow dining, and private spaces
+              designed for stillness, warmth, and coastal ease.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
@@ -61,7 +61,7 @@ export default function Home() {
                 Enquire
               </Link>
             </div>
-            <div className="mt-12 grid max-w-md grid-cols-2 gap-6 text-sm text-ink/70 sm:grid-cols-3">
+            <div className="mt-14 grid max-w-md grid-cols-2 gap-6 text-sm text-ink/70 sm:grid-cols-3">
               <div>
                 <p className="text-display text-2xl text-ink">2</p>
                 <p>Active villas</p>
@@ -77,24 +77,52 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal className="relative">
-            <div className="absolute -left-8 -top-8 h-40 w-40 rounded-full bg-sunset/20 blur-3xl" />
-            <HeroParallax>
-              <div className="relative overflow-hidden rounded-[32px] shadow-[0_40px_90px_rgba(12,27,28,0.15)]">
-                <Image
-                  src={
-                    heroVilla?.heroImage ??
-                    "https://unsplash.com/photos/IQ32MAKKVFI/download?force=true&w=1800"
-                  }
-                  alt={heroVilla?.name ?? "Tropical Marina"}
-                  width={960}
-                  height={720}
-                  className="h-full w-full object-cover"
-                  priority
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
+            <div className="absolute -left-10 -top-10 h-48 w-48 rounded-full bg-sunset/25 blur-3xl" />
+            <div className="grid gap-4 lg:grid-cols-[0.7fr_0.3fr]">
+              <HeroParallax>
+                <div className="relative overflow-hidden rounded-[32px] shadow-[0_40px_90px_rgba(12,27,28,0.15)]">
+                  <Image
+                    src={
+                      heroVilla?.heroImage ??
+                      "https://unsplash.com/photos/IQ32MAKKVFI/download?force=true&w=1800"
+                    }
+                    alt={heroVilla?.name ?? "Tropical Marina"}
+                    width={960}
+                    height={720}
+                    className="h-full w-full object-cover"
+                    priority
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                  />
+                </div>
+              </HeroParallax>
+              <div className="hidden flex-col gap-4 lg:flex">
+                <div className="relative h-40 overflow-hidden rounded-[24px] shadow-[0_24px_60px_rgba(12,27,28,0.12)]">
+                  <Image
+                    src={
+                      heroVilla?.gallery[0] ??
+                      "https://unsplash.com/photos/pt0nGH-NvoA/download?force=true&w=1200"
+                    }
+                    alt="Coastal detail"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 14vw, 100vw"
+                  />
+                </div>
+                <div className="relative h-40 overflow-hidden rounded-[24px] shadow-[0_24px_60px_rgba(12,27,28,0.12)]">
+                  <Image
+                    src={
+                      secondaryVilla?.gallery[0] ??
+                      "https://unsplash.com/photos/dgTzAvblPw4/download?force=true&w=1200"
+                    }
+                    alt="Villa detail"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 14vw, 100vw"
+                  />
+                </div>
               </div>
-            </HeroParallax>
-            <div className="glass-panel absolute -bottom-10 left-6 right-6 rounded-2xl p-6 shadow-lg">
+            </div>
+            <div className="glass-panel absolute -bottom-12 left-6 right-6 rounded-2xl p-6 shadow-lg">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-tropic">
                 Featured villa
               </p>
@@ -104,6 +132,96 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section-pad bg-ink text-ivory">
+        <div className="mx-auto w-full max-w-6xl px-6 text-center">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-sand">
+              Statement
+            </p>
+            <h2 className="text-display mt-4 text-3xl md:text-5xl">
+              A coastal sanctuary built for quiet luxury, not crowds.
+            </h2>
+            <p className="mt-4 text-base text-ivory/70 sm:text-lg">
+              Private villas, warm hosting, and a pace that lets the sea set the
+              rhythm.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-pad bg-mist">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.5em] text-tropic">
+              Resort highlights
+            </p>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Beachfront access",
+                  text: "Steps from serene shores and quiet coastal walks.",
+                },
+                {
+                  title: "Private stays",
+                  text: "Entire villas reserved for you, with personal hosting.",
+                },
+                {
+                  title: "Kerala-first hospitality",
+                  text: "Local flavors, rituals, and thoughtful details.",
+                },
+              ].map((item) => (
+                <Reveal key={item.title}>
+                  <div className="rounded-[28px] border border-black/5 bg-white/95 p-6 shadow-[0_24px_60px_rgba(12,27,28,0.08)]">
+                    <p className="text-display text-2xl text-ink">{item.title}</p>
+                    <p className="mt-3 text-sm leading-6 text-ink/70">
+                      {item.text}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.5em] text-tropic">
+              Must-do experiences
+            </p>
+            <h2 className="text-display mt-4 text-3xl md:text-4xl">
+              Signature moments, curated for the coast.
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Sunrise veranda",
+                text: "Quiet mornings with sea breeze and Kerala coffee.",
+              },
+              {
+                title: "Village strolls",
+                text: "Coastal lanes, small markets, and slow discoveries.",
+              },
+              {
+                title: "Seaside suppers",
+                text: "Kerala-inspired meals served with warm hospitality.",
+              },
+            ].map((item) => (
+              <Reveal key={item.title}>
+                <div className="rounded-[28px] border border-black/5 bg-white/95 p-6 shadow-[0_24px_60px_rgba(12,27,28,0.08)]">
+                  <p className="text-display text-2xl text-ink">{item.title}</p>
+                  <p className="mt-3 text-sm leading-6 text-ink/70">
+                    {item.text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -163,10 +281,10 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {featuredVillas.map((villa) => (
+          <div className="mt-12 space-y-12">
+            {featuredVillas.map((villa, index) => (
               <Reveal key={villa.id}>
-                <VillaCard villa={villa} />
+                <VillaRow villa={villa} index={index} />
               </Reveal>
             ))}
           </div>
@@ -205,28 +323,32 @@ export default function Home() {
           <Reveal className="relative">
             <div className="absolute -right-10 top-10 h-48 w-48 rounded-full bg-tropic/20 blur-3xl" />
             <div className="grid gap-6 md:grid-cols-2">
-              <Image
-                src={
-                  secondaryVilla?.gallery[1] ??
-                  "https://unsplash.com/photos/dgTzAvblPw4/download?force=true&w=1400"
-                }
-                alt="Garden courtyard"
-                width={520}
-                height={640}
-                className="h-full w-full rounded-[28px] object-cover"
-                sizes="(min-width: 1024px) 24vw, 100vw"
-              />
-              <Image
-                src={
-                  heroVilla?.gallery[1] ??
-                  "https://unsplash.com/photos/pt0nGH-NvoA/download?force=true&w=1400"
-                }
-                alt="Coastal retreat"
-                width={520}
-                height={640}
-                className="h-full w-full rounded-[28px] object-cover"
-                sizes="(min-width: 1024px) 24vw, 100vw"
-              />
+              <HeroParallax>
+                <Image
+                  src={
+                    secondaryVilla?.gallery[1] ??
+                    "https://unsplash.com/photos/dgTzAvblPw4/download?force=true&w=1400"
+                  }
+                  alt="Garden courtyard"
+                  width={520}
+                  height={640}
+                  className="h-full w-full rounded-[28px] object-cover"
+                  sizes="(min-width: 1024px) 24vw, 100vw"
+                />
+              </HeroParallax>
+              <HeroParallax>
+                <Image
+                  src={
+                    heroVilla?.gallery[1] ??
+                    "https://unsplash.com/photos/pt0nGH-NvoA/download?force=true&w=1400"
+                  }
+                  alt="Coastal retreat"
+                  width={520}
+                  height={640}
+                  className="h-full w-full rounded-[28px] object-cover"
+                  sizes="(min-width: 1024px) 24vw, 100vw"
+                />
+              </HeroParallax>
             </div>
           </Reveal>
         </div>

@@ -26,6 +26,45 @@ const chapters = [
   },
 ];
 
+function StoryCard({
+  chapter,
+}: {
+  chapter: { number: string; title: string; text: string; image: string };
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+
+  return (
+    <Reveal>
+      <div
+        ref={ref}
+        className="overflow-hidden rounded-[32px] border border-black/5 bg-white/80 shadow-[0_30px_80px_rgba(12,27,28,0.08)]"
+      >
+        <motion.div style={{ y }} className="relative h-64 w-full">
+          <Image
+            src={chapter.image}
+            alt={chapter.title}
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </motion.div>
+        <div className="p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50">
+            Chapter {chapter.number}
+          </p>
+          <p className="text-display text-2xl text-ink">{chapter.title}</p>
+          <p className="mt-3 text-sm leading-6 text-ink/70">{chapter.text}</p>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
 export function StorylineSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -68,30 +107,7 @@ export function StorylineSection() {
           </Reveal>
           <div className="space-y-8">
             {chapters.map((chapter) => (
-              <Reveal key={chapter.title}>
-                <div className="overflow-hidden rounded-[32px] border border-black/5 bg-white/80 shadow-[0_30px_80px_rgba(12,27,28,0.08)]">
-                  <div className="relative h-64 w-full">
-                    <Image
-                      src={chapter.image}
-                      alt={chapter.title}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50">
-                      Chapter {chapter.number}
-                    </p>
-                    <p className="text-display text-2xl text-ink">
-                      {chapter.title}
-                    </p>
-                    <p className="mt-3 text-sm leading-6 text-ink/70">
-                      {chapter.text}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
+              <StoryCard key={chapter.title} chapter={chapter} />
             ))}
           </div>
         </div>

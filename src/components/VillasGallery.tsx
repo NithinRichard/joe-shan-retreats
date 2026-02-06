@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Reveal } from "@/components/Reveal";
-import { VillaCard } from "@/components/VillaCard";
+import { VillaRow } from "@/components/VillaRow";
 import type { Villa } from "@/data/villas";
 
 const filters = ["All", "Beachfront", "Family", "Pool", "Upcoming"];
@@ -67,10 +67,10 @@ export function VillasGallery({ villas }: { villas: Villa[] }) {
           ))}
         </Reveal>
       </div>
-      <div className="mt-12 grid gap-8 md:grid-cols-2">
-        {filtered.map((villa) => (
+      <div className="mt-12 space-y-12">
+        {filtered.map((villa, index) => (
           <Reveal key={villa.id}>
-            <VillaCard villa={villa} />
+            <VillaRow villa={villa} index={index} />
           </Reveal>
         ))}
       </div>
